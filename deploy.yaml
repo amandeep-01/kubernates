@@ -4,6 +4,8 @@ metadata:
   name: django-deployement
   labels:
     app: django1
+  namespace: ingress-nginx
+  
 spec:
   replicas: 2
   selector:
@@ -17,6 +19,6 @@ spec:
     spec:
       containers:
         - name: django-image2
-          image: amandeep57/imagename:latest
+          image: amandeep57/django-app:latest
           ports:
-            - containerPort: 8000
+            - containerPort: 8001
